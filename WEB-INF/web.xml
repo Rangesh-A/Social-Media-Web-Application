@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+  <display-name>Social_media</display-name>
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Social-app</web-resource-name>
+        <url-pattern>/sso-auth</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>user</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+        <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+</security-constraint>
+
+<security-role>
+    <description>Social-Users</description>
+    <role-name>user</role-name>
+</security-role>
+<login-config> 
+    <auth-method>SPNEGO</auth-method> 
+</login-config>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+        <filter-name>nlogged</filter-name>
+        <filter-class>Filters.NotLoggedInFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>nlogged</filter-name>
+        <url-pattern>/user-home.jsp</url-pattern>
+        <url-pattern>/find-friends.jsp</url-pattern>
+        <url-pattern>/friends-list.jsp</url-pattern>
+        <url-pattern>/user-edit.jsp</url-pattern>
+        <url-pattern>/user-profile.jsp</url-pattern>
+        <url-pattern>/user-settings.jsp</url-pattern>
+        <url-pattern>/user-about.jsp</url-pattern>
+        <url-pattern>/posts.jsp</url-pattern>
+        <url-pattern>/header.jsp</url-pattern>
+    </filter-mapping>
+<!-- </error-page> -->
+    <!-- <filter>
+        <filter-name>sso</filter-name>
+        <filter-class>Filters.CustomAuthenticatorValve</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sso</filter-name>
+        <url-pattern>/SSOAdLogin.jsp</url-pattern>
+    </filter-mapping> -->
+    <!-- <filter>
+        <filter-name>logged</filter-name>
+        <filter-class>Filters.LoggedInFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>logged</filter-name>
+        <url-pattern>/Login.jsp</url-pattern>
+        <url-pattern>/Register.jsp</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping> -->
+     <!-- <filter>
+        <filter-name>win</filter-name>
+        <filter-class>Filters.CustomSecurityFilter</filter-class>
+    </filter> -->
+    <!-- <filter-mapping>
+        <filter-name>win</filter-name>
+        <url-pattern>/Login.jsp</url-pattern>
+        <url-pattern>/Register.jsp</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping> -->
+    <listener>
+        <listener-class>Services.SynchronizationScheduler</listener-class>
+    </listener>
+    <!-- <login-config>
+    <auth-method>KERBEROS</auth-method>
+    <realm-name>mycompany.com</realm-name>
+</login-config> -->
+</web-app>
