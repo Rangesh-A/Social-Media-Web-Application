@@ -1,0 +1,96 @@
+.container{
+        	position:absolute;
+            border-radius: 4px;
+            top:15%;
+            left:400px;
+            height:60%;
+            background-color:white;
+            width:50%;
+            z-index:1;
+            box-shadow:3px 3px 13px black;
+            padding:50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+        }
+        .h-color{
+        	background-color:#007ba8;
+        	height:30%;
+        }
+        *{
+        	font-family:Poppins;
+        	margin:0px;
+        	
+        }
+        container*{
+        	margin:20px;
+        }
+        body{
+        	background-color:black;
+        }
+        .logo{
+        	width:10%;
+        	margin:20px;
+        	margin-top:5%;
+        	margin-left:12%;
+        }
+        .title{
+        	display:flex;
+        }
+        form{
+        	display:flex;
+        	flex-direction:column;
+        }
+        form>input{
+        	padding:5px 20px;
+        	font-size:15px;
+        	width:25em;
+        	margin:20px 0px;
+        	border-radius:15px;
+        	border:0.1px solid grey;
+        }
+        form>input[type=submit]{
+        transition:ease 1s;
+        	cursor:pointer;
+        	border:0.1px solid grey;
+        }
+        form>input[type=submit]:hover{
+        	background-color:00a884;
+        }
+        a>button{
+        	cursor:pointer;
+        	padding:5px 20px;
+        	margin:20px 10px;
+        	border-radius:15px;
+			transition:ease 1s;
+			border:0.1px solid grey;
+            font-size:15px;
+
+        }
+         a>button:hover{
+        	background-color:00a884;
+        }
+        .err_msg{
+        	text-align:center;
+        	color:red;
+        }
+        .succ_msg{
+        	text-align:center;
+        	color:green;
+        }
+        .btn-red:hover{
+            background-color: red;
+            color:white;
+        }
+        .btn-green:hover{
+            background-color: #00a53a;
+        }
+        .btn-blue:hover{
+            background-color: #0181c2;
+            color:white;
+        }
+        .btn-yellow:hover{
+            background-color: #ffb500;
+            color:white;
+        }

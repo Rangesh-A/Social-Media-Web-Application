@@ -1,0 +1,88 @@
+#unf-btn:hover{
+	background-color:#ff4a4a !important;
+}
+#unf-btn{
+	background-color:#ff8080;
+}
+.friend-requests{
+	display:grid;
+	grid-template-columns: 13em 13em 13em;
+	gap:45px;
+}
+.friend-request{
+	display:flex;
+	flex-direction:column;
+	border:0.1px solid #dedede;
+	border-radius:10px;
+	box-shadow:2px 5px 10px #cacaca;
+	width:107%;
+}
+.friend-request-top>img{
+	width:100%;
+	object-fit:cover;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+.friend-request-top{
+	width:100%;
+	height:15em;
+}
+.friend-request-bottom{
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+}
+.friend-request-bottom>*{
+	margin:5px;
+}
+.friend-request-bottom>h4,.friend-request-bottom>p{
+	margin-left:15px;
+}
+.friend-request-bottom>form,.friend-request-bottom>.confrm-btn{
+	width:95%;
+}
+.friend-request-bottom>p{
+	font-size:14px;
+}
+
+.acct-btn{
+	height:40px;
+	width:100%;
+	padding:2px;
+	border-radius:10px;
+	cursor:pointer;
+	border:none;
+	font-weight:bold;
+	transition:ease-in 0.2s;
+	text-align:center;
+}
+.acct-btn:hover{
+	background-color:lightgray;
+}
+.confrm-btn{
+	background-color:#3c89e8;
+	color:white;
+	transition:ease-in 0.2s;
+}
+.confrm-btn:hover{
+	background-color:#1766c6;
+	color:white;
+}
+.green{
+	color:lightgreen;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.acc-btn{
+	height:40px;
+	width:90%;
+	padding:2px;
+	border-radius:10px;
+	cursor:pointer;
+	border:none;
+	font-weight:bold;
+	transition:ease-in 0.2s;
+	background-color:#ffff80;
+}

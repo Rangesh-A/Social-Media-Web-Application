@@ -1,0 +1,132 @@
+*{
+	margin:0px;
+	font-family:poppins;
+}
+.header{
+	box-shadow:10px 5px 10px #cacaca;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content: center;
+	padding:8px;
+}
+.left>*{
+	margin:1%;
+}
+.logo{
+	width:15%;
+}
+.left{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+#search-glass{
+	position:absolute;
+	margin-left:150px;
+}
+.search-box{
+	border-radius:50px;
+	border:none;
+	font-size:17px;
+	padding:1%;
+	padding-left:5%;
+	font-weight:lighter;
+	background-color:#f0f0f0;
+	color:black;
+	box-shadow:4px 4px 4px #cacaca;
+}
+.logout>input{
+	padding:25%;
+	color:white;
+	border:none;
+	border-radius:10px;
+	cursor:pointer;
+	background-color:#ff8080;
+	transition:ease-in 0.2s;
+}
+.logout>input:hover{
+	background-color:red;
+}
+.right{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	gap:50%;
+}
+.profile{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	gap:10px;
+	cursor:pointer;
+	transition:ease-in 0.1s;
+}
+
+.profile>img{
+	border-radius:50%;
+	width:50px;
+	height:50px;
+	object-fit:cover;
+}
+.profile>p{
+	max-width:70px;
+}
+.profile:hover{
+	transform:scale(1.02);
+}
+.small-user-dp{
+	border-radius:50%;
+	object-fit:cover;
+}
+.right>a{
+	color:black;
+	text-decoration:none;
+}
+i{
+	color:#5e5e5e;
+}
+.fa-house-chimney,.fa-message,.fa-gear,.fa-user-group,.fa-gear{
+	font-size:35px;
+	padding:5px 20px;
+	border-radius:10px;
+	cursor:pointer;
+	transition:ease-in 0.2s;
+}
+.count{
+	font-size:20px;
+	color:red;
+}
+.fa-house-chimney:hover,.fa-message:hover,fa-message:hover,fa-gear:hover,.fa-user-group:hover,.fa-gear:hover{
+	background-color:#e4e4e4;
+	color:#ff8080;
+}
+.center{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	gap:0px;
+
+}
+#clear{
+	position:absolute;
+	margin-left:350px;
+	cursor:pointer;
+}
+#search-btn{
+	height:40px;
+	width:10%;
+	padding:2px;
+	border-radius:20px;
+	cursor:pointer;
+	border:none;
+	font-weight:bold;
+	box-shadow:4px 4px 5px #cacaca;
+	transition:ease-in 0.2s;
+}
+#search-btn:hover{
+	background-color:lightgreen;
+}
+#ssoLogin{
+	border-radius:0px !important;
+}
