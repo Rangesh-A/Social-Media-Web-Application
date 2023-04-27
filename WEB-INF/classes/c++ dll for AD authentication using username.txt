@@ -1,0 +1,48 @@
+#include <iostream>
+#include "Model_Authenticator.h"
+#include <jni.h>
+#include <iads.h>
+#include <AdsHlp.h>
+#include<atlbase.h>
+
+JNIEXPORT jboolean JNICALL Java_Model_Authenticator_authenticate
+(JNIEnv* env, jclass cls, jstring name, jstring pass) {
+    jboolean isCopyUsername;
+    const char* c_name = env->GetStringUTFChars(name, &isCopyUsername);
+    jboolean isCopyPassword;
+    const char* c_pass = env->GetStringUTFChars(pass, &isCopyPassword);
+
+
+    jboolean result = false;
+    IADsOpenDSObject* pDSO = NULL;
+    HRESULT hr = S_OK;
+    CoInitialize(NULL);
+    hr = ADsGetObject(L"LDAP:", IID_IADsOpenDSObject, (void**)&pDSO);
+    if (SUCCEEDED(hr))
+    {
+        IDispatch* pDisp;
+        hr = pDSO->OpenDSObject(CComBSTR("LDAP://192.168.10.161:389/OU=Zoho,DC=zohor,DC=com"),
+            CComBSTR(c_name),
+            CComBSTR(c_pass),
+            ADS_SECURE_AUTHENTICATION,
+            &pDisp);
+        pDSO->Release();
+        if (SUCCEEDED(hr))
+        {
+            result = true;
+        }
+        else {
+            result = false;
+            printf("noo2");
+            CoUninitialize();
+        }
+    }
+    else {
+        result = false;
+        printf("Error code: %08x\n", hr);
+        printf("noo1");
+    }
+    env->ReleaseStringUTFChars(name, c_name);
+    env->ReleaseStringUTFChars(pass, c_pass);
+    return result;
+}
